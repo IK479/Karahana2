@@ -28,6 +28,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.karahana.R;
+import com.example.karahana.managers.Models.SongsLibrary;
+import com.example.karahana.managers.Models.appManager;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
@@ -50,20 +52,21 @@ public class Player extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
-
+    private appManager appManager;
 
     double finalTime = 0;
     double startTime = 0;
     static int oneTimeOnly = 0;
     Handler handler = new Handler();
     MediaPlayer mediaPlayer;
+    SongsLibrary songsLibrary;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        //mediaPlayer = MediaPlayer.create(this, R.raw.song);
+        mediaPlayer = MediaPlayer.create(this, R.raw.song);
         // Toolbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,36 +81,36 @@ public class Player extends AppCompatActivity {
 
         findView();
         camera();
-//        click();
-        play_song();
+        click();
+
 
     }
 
-    public void play_song(){
-        mediaPlayer  = new MediaPlayer();
-        try {
-            mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/login-register-firebase-e74af.appspot.com/o/Maroon%205%20-%20Beautiful%20Mistakes%20ft.%20Megan%20Thee%20Stallion%20(Official%20Music%20Video).mp3?alt=media&token=a6624167-e439-4cbc-8acf-d79889a2d1e7");
-            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mediaPlayer) {
-                    click();
-                }
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void play_song(){
+//        mediaPlayer  = new MediaPlayer();
+//        try {
+//            //mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/login-register-firebase-e74af.appspot.com/o/Maroon%205%20-%20Beautiful%20Mistakes%20ft.%20Megan%20Thee%20Stallion%20(Official%20Music%20Video).mp3?alt=media&token=a6624167-e439-4cbc-8acf-d79889a2d1e7");
+//            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//                @Override
+//                public void onPrepared(MediaPlayer mediaPlayer) {
+//                    click();
+//                }
+//            });
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 
-    private void prepareMediaPlayer(){
-        try {
-            mediaPlayer.setDataSource("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
-            mediaPlayer.prepare();
-        }catch (Exception exception) {
-            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
+//    private void prepareMediaPlayer(){
+//        try {
+//            mediaPlayer.setDataSource("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+//            mediaPlayer.prepare();
+//        }catch (Exception exception) {
+//            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 
 
@@ -182,7 +185,6 @@ public class Player extends AppCompatActivity {
 
     @SuppressLint("DefaultLocale")
     private void playMusic(){
-        prepareMediaPlayer();
         mediaPlayer.start();
         finalTime = mediaPlayer.getDuration();
         startTime = mediaPlayer.getCurrentPosition();

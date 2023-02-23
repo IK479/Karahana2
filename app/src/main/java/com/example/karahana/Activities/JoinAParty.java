@@ -13,6 +13,7 @@ import com.example.karahana.Interfaces.CallBack_eventProtocol;
 import com.example.karahana.managers.Models.PartyCard;
 import com.example.karahana.managers.Models.PartyList;
 import com.example.karahana.R;
+import com.example.karahana.managers.PartyManager;
 
 public class JoinAParty extends AppCompatActivity {
 
@@ -27,7 +28,10 @@ public class JoinAParty extends AppCompatActivity {
         @Override
         public void partyEnter(PartyCard party) {
              //TODO
-             Toast.makeText(JoinAParty.this, "TODO!!!  Enter to party "+party.getPartyName(), Toast.LENGTH_SHORT).show();
+             //Toast.makeText(JoinAParty.this, "TODO!!!  Enter to party "+party.getPartyName(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), Player.class);
+            startActivity(intent);
+            finish();
         }
     };
 

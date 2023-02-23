@@ -71,7 +71,7 @@ public class ShareFragment extends Fragment {
 
     public void partyInfo() {
         partyCard = PartyManager.getInstance().getNewParty();
-//        partyImg.setImageResource(partyCard.getBgImage());
+        partyImg.setImageResource(partyCard.getBgImage());
         partyName.setText(partyCard.getPartyName());
         day.setText(partyCard.getTime().getDay()+"");
         month.setText(partyCard.getTime().getMonth());
