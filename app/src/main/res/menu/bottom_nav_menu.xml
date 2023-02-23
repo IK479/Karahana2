@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/party"
+        android:title="@string/party"
+        android:icon="@drawable/ic_party"/>
+    <item
+        android:id="@+id/playlist"
+        android:title="@string/playlist"
+        android:icon="@drawable/ic_playlist"/>
+    <item
+        android:id="@+id/share"
+        android:title="@string/share"
+        android:icon="@drawable/ic_share"/>
+
+
+</menu>

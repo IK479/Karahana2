@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/pFragment_IMG_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_cparty_bg"/>
+
+    <RelativeLayout
+        android:id="@+id/pFragment_LAY_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="75dp">
+            <TextView
+                android:id="@+id/pFragment_textType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private:"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="40dp"/>
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/pFragment_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp">
+
+            </androidx.appcompat.widget.SwitchCompat>
+
+
+            <EditText
+                android:id="@+id/pFragment_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:paddingLeft="15dp"
+                android:layout_width="330dp"
+                android:layout_height="42dp"
+                android:textColorHint="@android:color/black"
+                android:hint="Password:"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:textColorLink="@color/white"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/pFragment_switch"
+                android:alpha="0.5"
+                android:background="@drawable/edit_text_style"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="100"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:maxLines="4"/>
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pFragment_title"
+            android:text="@string/create_a_party"
+            android:textSize="54sp"
+            android:fontFamily="@font/bangers"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/white"/>
+
+
+        <EditText
+            android:id="@+id/pFragment_pName"
+            android:alpha="0.5"
+            android:textColorHint="@android:color/black"
+            android:paddingLeft="15dp"
+            android:layout_width="330dp"
+            android:layout_height="42dp"
+            android:hint="@string/party_name"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/pFragment_title"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/pFragment_date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:paddingLeft="15dp"
+            android:textColorHint="@android:color/black"
+
+            android:alpha="0.5"
+            android:layout_width="330dp"
+            android:layout_height="42dp"
+            android:hint="Date:"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/pFragment_pName"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/edit_text_style"
+            android:textColorLink="@color/white"/>
+
+
+        <EditText
+            android:id="@+id/pFragment_time"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:paddingLeft="15dp"
+            android:layout_width="330dp"
+            android:layout_height="42dp"
+            android:hint="Time:"
+            android:textStyle="bold"
+            android:textColorHint="@android:color/black"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/pFragment_date"
+            android:textColor="@color/black"
+            android:alpha="0.5"
+            android:background="@drawable/edit_text_style"
+            android:textColorLink="@color/white"/>
+
+
+        <EditText
+            android:id="@+id/pFragment_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:paddingLeft="15dp"
+            android:textStyle="bold"
+
+            android:layout_below="@+id/pFragment_time"
+            android:layout_width="330dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="100dp"
+            android:hint="Free Text:"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/black"
+            android:background="@drawable/edit_text_style"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.5"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="100"
+            android:maxLines="4"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_images"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

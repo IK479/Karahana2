@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="12dp"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/sCard_alpa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccefff"
+        android:alpha="0.3"
+        android:visibility="invisible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/sCard_songViewImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"/>
+
+            <RelativeLayout
+                android:layout_width="205dp"
+                android:layout_height="100dp"
+                android:layout_toEndOf="@+id/sCard_songViewImg">
+
+                <TextView
+                    android:id="@+id/sCard_artistName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+
+                    android:layout_marginStart="25dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="@string/artist"/>
+
+                <TextView
+                    android:id="@+id/sCard_songName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_below="@+id/sCard_artistName"
+                    android:layout_marginStart="25dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="@string/party_name"/>
+            </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="25dp">
+
+            <Button
+                android:id="@+id/sCard_BTN_pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_pause"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/sCard_BTN_play"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_play" />
+        </RelativeLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

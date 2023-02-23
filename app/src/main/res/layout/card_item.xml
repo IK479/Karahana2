@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="12dp"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="6dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/partyCard_cardViewImg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/partyCard_partyName"
+        android:layout_alignTop="@+id/partyCard_cardViewImg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="@string/party_name"/>
+
+
+
+        <RelativeLayout
+            android:id="@+id/partyCard_calender"
+            android:layout_width="80dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@+id/partyCard_partyName">
+
+        <ImageView
+            android:id="@+id/partyCard_ic_calender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <TextView
+            android:id="@+id/partyCard_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_00"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/partyCard_ic_calender"
+            android:layout_marginBottom="-3dp"
+            android:textSize="35sp"/>
+
+
+        <TextView
+            android:id="@+id/partyCard_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="january"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="22dp"
+            android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/timeAndType"
+            android:layout_width="100dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="25dp"
+            android:layout_toEndOf="@id/partyCard_calender"
+            android:layout_marginStart="45dp"
+            android:layout_below="@+id/partyCard_partyName">
+
+            <TextView
+                android:id="@+id/partyCard_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/partyCard_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="45dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/partyCard_btn_enterToEvent"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@id/timeAndType"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="37dp"
+            android:text="@string/enter"
+            android:textSize="10dp"
+            android:layout_below="@+id/partyCard_partyName"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

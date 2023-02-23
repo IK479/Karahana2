@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1074246300768",
+    "firebase_url": "https://login-register-firebase-e74af-default-rtdb.firebaseio.com",
+    "project_id": "login-register-firebase-e74af",
+    "storage_bucket": "login-register-firebase-e74af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074246300768:android:fe028c624a6520e2abff05",
+        "android_client_info": {
+          "package_name": "com.example.karahana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074246300768-5r318mug01ni65ovpn6vicupsta7m8cl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmBSEooHghkzK6ZiQBrvMyxGdw_h3T4HE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074246300768-5r318mug01ni65ovpn6vicupsta7m8cl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
