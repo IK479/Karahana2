@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.karahana.BuildConfig;
 import com.example.karahana.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -106,23 +107,21 @@ public class Login extends AppCompatActivity {
         });
     }
 
-
-
         public void login(String email, String password){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressBar.setVisibility(View.GONE);
-                    //if (task.isSuccessful()) {
+                    if (task.isSuccessful()) {
                         Toast.makeText(Login.this, LOGIN_SUCCESSFUL_MESSAGE, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                         finish();
 
-                    //} else {
-                    //    Toast.makeText(Login.this, LOGIN_FAILED_MESSAGE, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(Login.this, LOGIN_FAILED_MESSAGE, Toast.LENGTH_SHORT).show();
 
-                    //}
+                    }
                 }
             });
         }
