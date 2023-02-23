@@ -20,7 +20,7 @@ import com.example.karahana.managers.PartyManager;
 
 public class ShareFragment extends Fragment {
 
-    private PartyCard partyCard = PartyManager.getInstance().getNewParty();
+    private PartyCard partyCard;
     private Button shareButton;
     private ImageView partyImg;
     private TextView partyName;
@@ -29,7 +29,6 @@ public class ShareFragment extends Fragment {
     private TextView isPrivate;
     private TextView time;
     private ImageView calenderImg;
-    private Button enterToEvent;
 
 
     @Override
@@ -47,26 +46,31 @@ public class ShareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_share, container, false);
         findViews(view);
-        partyInfo();
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        partyInfo();
+    }
+
     private void findViews(View view) {
-        partyImg = view.findViewById(R.id.partyCard_cardViewImg);
-        partyName = view.findViewById(R.id.partyCard_partyName);
-        day = view.findViewById(R.id.partyCard_day);
-        month = view.findViewById(R.id.partyCard_month);
-        time = view.findViewById(R.id.partyCard_time);
-        isPrivate = view.findViewById(R.id.partyCard_type);
-        calenderImg = view.findViewById(R.id.partyCard_ic_calender);
-        enterToEvent = view.findViewById(R.id.partyCard_btn_enterToEvent);
+        partyImg = view.findViewById(R.id.sFragment_cardViewImg);
+        partyName = view.findViewById(R.id.sFragment_partyName);
+        day = view.findViewById(R.id.sFragment_day);
+        month = view.findViewById(R.id.partyCard_sFragment_month);
+        time = view.findViewById(R.id.sFragment_time);
+        isPrivate = view.findViewById(R.id.sFragment_type);
+        calenderImg = view.findViewById(R.id.sFragment_ic_calender);
         shareButton = view.findViewById(R.id.sFragment_BTN_share);
     }
 
     public void partyInfo() {
+        partyCard = PartyManager.getInstance().getNewParty();
 //        partyImg.setImageResource(partyCard.getBgImage());
         partyName.setText(partyCard.getPartyName());
-        day.setText(partyCard.getTime().getDay());
+        day.setText(partyCard.getTime().getDay()+"");
         month.setText(partyCard.getTime().getMonth());
         time.setText(partyCard.getTime().getFullTime());
         isPrivate.setText(partyCard.isPrivate());
@@ -79,6 +83,5 @@ public class ShareFragment extends Fragment {
         i.putExtra(Intent.EXTRA_SUBJECT, "username");
         i.putExtra(Intent.EXTRA_TEXT, "randomNum");
         startActivity((Intent.createChooser(i, "Choose a platform")));
-
     }
 }

@@ -22,6 +22,7 @@ import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.karahana.R;
@@ -30,10 +31,10 @@ public class PartyFragment extends Fragment implements TimePickerDialog.OnTimeSe
         DatePickerDialog.OnDateSetListener {
 
     private EditText textEditText;
-    private EditText dateEditText;
+    private TextView dateEditText;
     private SwitchCompat switchCompat;
     private EditText partyName;
-    private EditText timeEditText;
+    private TextView timeEditText;
     private EditText passwordEditText;
     private Button chooseImg;
 

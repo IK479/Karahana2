@@ -20,6 +20,7 @@ public class SongCard {
         this.artist = artist;
         this.songName = song;
         this.url = url;
+        this.isChecked = true;
     }
 
     public int getArtistImg() {

@@ -20,6 +20,7 @@ public class PartyManager {
 
     public void startNewParty() {
         newParty = new PartyCard();
+        newParty.setPlayList(new SongsLibrary().getLibrary());
     }
 
     public PartyCard getNewParty() {
@@ -31,7 +32,7 @@ public class PartyManager {
         ArrayList<SongCard> playlist = songsLibrary.getLibrary();
         for (SongCard song : playlist) {
             song.setChecked(false);
-            for (SongCard selected : playlist) {
+            for (SongCard selected : newParty.getPlayList()) {
                 if (song.equals(selected)) {
                     song.setChecked(true);
                     break;

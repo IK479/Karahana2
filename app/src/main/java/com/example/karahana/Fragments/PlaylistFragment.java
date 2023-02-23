@@ -38,25 +38,28 @@ public class PlaylistFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_playlist, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
-        dataInitialize();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        dataInitialize();
     }
 
     private void dataInitialize() {
         partyCard = PartyManager.getInstance().getNewParty();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
-        ArrayList<SongCard> playlist=PartyManager.getInstance().getSelectedPlaylist();
-        adapter = new SongAdapter(this, playlist);
+        adapter = new SongAdapter(this, partyCard.getPlayList());
         recyclerView.setAdapter(adapter);
-        adapter.setPlaylist(playlist);
+        adapter.setPlaylist(partyCard.getPlayList());
       }
 
     @Override
     public void onPause() {
         super.onPause();
-        partyCard.setPlayList(adapter.getSelectedSongs());
-        if (partyCard.getPlayList().size()==0){
+        if (adapter.getSelectedSongs().size()==0){
             Toast.makeText(getContext(), "No selection", Toast.LENGTH_SHORT).show();
         }
     }

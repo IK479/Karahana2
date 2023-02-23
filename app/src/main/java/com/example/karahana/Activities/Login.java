@@ -113,16 +113,16 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressBar.setVisibility(View.GONE);
-                    if (task.isSuccessful()) {
+                    //if (task.isSuccessful()) {
                         Toast.makeText(Login.this, LOGIN_SUCCESSFUL_MESSAGE, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                         finish();
 
-                    } else {
-                        Toast.makeText(Login.this, LOGIN_FAILED_MESSAGE, Toast.LENGTH_SHORT).show();
+                    //} else {
+                    //    Toast.makeText(Login.this, LOGIN_FAILED_MESSAGE, Toast.LENGTH_SHORT).show();
 
-                    }
+                    //}
                 }
             });
         }

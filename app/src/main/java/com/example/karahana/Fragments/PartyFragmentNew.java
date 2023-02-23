@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -38,10 +39,10 @@ public class PartyFragmentNew extends Fragment implements TimePickerDialog.OnTim
     SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 
     private EditText textEditText;
-    private EditText dateEditText;
+    private TextView dateEditText;
     private SwitchCompat switchCompat;
     private EditText partyName;
-    private EditText timeEditText;
+    private TextView timeEditText;
     private EditText passwordEditText;
 
     private final int SELECT_IMAGE_CODE = 1;
