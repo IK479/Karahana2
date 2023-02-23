@@ -13,7 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.karahana.Activities.Login;
+import com.example.karahana.Activities.MainActivity;
 import com.example.karahana.R;
 import com.example.karahana.managers.Models.PartyCard;
 import com.example.karahana.managers.PartyManager;
@@ -78,10 +81,17 @@ public class ShareFragment extends Fragment {
     }
 
     public void shareData(){
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("text/plain");
-        i.putExtra(Intent.EXTRA_SUBJECT, "username");
-        i.putExtra(Intent.EXTRA_TEXT, "randomNum");
-        startActivity((Intent.createChooser(i, "Choose a platform")));
+        if (PartyManager.getInstance().addNewParty(getActivity())) {
+            //Intent i = new Intent(Intent.ACTION_SEND);
+           // i.setType("text/plain");
+           // i.putExtra(Intent.EXTRA_SUBJECT, "username");
+           // i.putExtra(Intent.EXTRA_TEXT, "randomNum");
+           // startActivity((Intent.createChooser(i, "Choose a platform")));
+
+            Toast.makeText(getActivity(), "Party added successfully", Toast.LENGTH_SHORT).show();
+            getActivity().finish();
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+        }
     }
 }

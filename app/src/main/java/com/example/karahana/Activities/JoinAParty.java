@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.karahana.Adapters.EventsAdapter;
 import com.example.karahana.Fragments.PartiesListFragment;
@@ -18,14 +19,15 @@ public class JoinAParty extends AppCompatActivity {
     private InfoFragment infoFragment;
     private PartiesListFragment eventsListFragment;
 
-    private EventsAdapter eventAdapter;
-    private PartyList partiesList = new PartyList();
-
-
     CallBack_eventProtocol callBack_eventProtocol = new CallBack_eventProtocol() {
         @Override
         public void partyPos(PartyCard party) {
             showPartyDialog(party);
+        }
+        @Override
+        public void partyEnter(PartyCard party) {
+             //TODO
+             Toast.makeText(JoinAParty.this, "TODO!!!  Enter to party "+party.getPartyName(), Toast.LENGTH_SHORT).show();
         }
     };
 

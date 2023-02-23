@@ -19,13 +19,13 @@ import com.example.karahana.managers.Models.MyTime;
 import com.example.karahana.managers.Models.PartyCard;
 import com.example.karahana.managers.Models.PartyList;
 import com.example.karahana.R;
+import com.example.karahana.managers.PartyManager;
 
 public class PartiesListFragment extends Fragment {
 
     private Button eventEnterButton;
     private RecyclerView recyclerView;
     private EventsAdapter eventAdapter;
-    private PartyList partiesList;
     private CallBack_eventProtocol callBack_eventProtocol;
 
 
@@ -55,20 +55,12 @@ public class PartiesListFragment extends Fragment {
     }
 
     public void initViews(){
-        partiesList = new PartyList();
-        addPartyEvent();
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        eventAdapter = new EventsAdapter(getContext(), partiesList);
+        eventAdapter = new EventsAdapter(getContext(), PartyManager.getInstance().getPartiesList());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(eventAdapter);
         eventAdapter.setCallBack_eventProtocol(callBack_eventProtocol);
 
-    }
-
-    public void addPartyEvent(){
-        partiesList.addParty(new PartyCard("New Year Party", false, R.drawable.img_new_year_party,
-                new MyTime(2023, 7, 12, 21, 30), R.drawable.img_calender, "It's gonna be so cool!", ""));
     }
 
 }

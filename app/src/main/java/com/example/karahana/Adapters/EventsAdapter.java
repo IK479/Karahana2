@@ -68,6 +68,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
          holder.time.setText(String.valueOf(party.getTime().getFullTime()));
          holder.isPrivate.setText(party.isPrivate());
          holder.calenderImg.setImageResource(party.getCalenderImg());
+         holder.enterToEvent.setTag(party);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -92,8 +93,12 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         calenderImg = itemView.findViewById(R.id.partyCard_ic_calender);
         enterToEvent = itemView.findViewById(R.id.partyCard_btn_enterToEvent);
 
+        enterToEvent.setOnClickListener(view -> {
+            callBack_eventProtocol.partyEnter((PartyCard) view.getTag());
+        });
 
         itemView.setOnClickListener(view -> callBack_eventProtocol.partyPos(partiesList.getPartiesList().get(getAdapterPosition())));
+
         }
     }
 }
